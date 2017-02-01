@@ -74,3 +74,11 @@ flex-flow: $ff;
 -o-flex-wrap: $fw;
 flex-wrap: $fw;
 }
+
+@mixin aSelf($as) {
+-webkit-align-self: $as;
+-moz-align-self: $as;
+-ms-align-self: $as;
+-o-align-self: $as;
+align-self: $as;
+}

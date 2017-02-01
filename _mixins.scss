@@ -1,0 +1,76 @@
+
+
+@mixin navBreakMobile {  //change nav breakpoint
+    .navbar-header {        float: none;    }
+    .navbar-left,.navbar-right {        float: none !important;    }
+    .navbar-toggle {        display: block;    }
+    .navbar-collapse {        border-top: 1px solid transparent;        box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);    }
+    .navbar-fixed-top {        top: 0;        border-width: 0 0 1px;    }
+    .navbar-collapse.collapse {        display: none!important;    }
+    .navbar-nav {        float: none!important;        margin-top: 7.5px;    }
+    .navbar-nav>li {        float: none;    }
+    .navbar-nav>li>a {        padding-top: 10px;        padding-bottom: 10px;    }
+    .collapse.in{        display:block !important;    }
+	.navbar-collapse.in {    overflow-y: hidden !important; /* */}
+	.navbar-nav .open .dropdown-menu {    position: static;    float: none;    width: auto;    margin-top: 0;    background-color: transparent;    border: 0; -webkit-box-shadow: none;    box-shadow: none;}
+}
+@mixin transition {	transition: all 1s ease;}
+
+@mixin dFlex($bp) {
+display: -webkit-flex;
+display: -moz-flex;
+display: -ms-flex;
+display: -o-flex;
+-webkit-display: flex;
+-moz-display: flex;
+-ms-display: flex;
+-o-display: flex;
+display: flex;
+		@media screen and (max-width:$bp) {display: block; }
+}
+@mixin aItems($al) {
+	-webkit-align-items: $al;
+	-moz-align-items: $al;
+	-ms-align-items: $al;
+	-o-align-items: $al;
+	align-items: $al;
+}
+
+
+@mixin jContent($jc) {
+-webkit-justify-content: $jc;
+	-moz-justify-content: $jc;
+	-ms-justify-content: $jc;
+	-o-justify-content: $jc;
+	justify-content: $jc;
+}
+
+@mixin aContent($ac) {
+-webkit-align-content: $ac;
+-moz-align-content: $ac;
+-ms-align-content: $ac;
+-o-align-content: $ac;
+align-content: $ac;
+}
+@mixin fDirection($fd) {
+-webkit-flex-direction: $fd;
+-moz-flex-direction: $fd;
+-ms-flex-direction: $fd;
+-o-flex-direction: $fd;
+flex-direction: $fd;
+}
+@mixin fFlow($ff) {
+-webkit-flex-flow: $ff;
+-moz-flex-flow: $ff;
+-ms-flex-flow: $ff;
+-o-flex-flow: $ff;
+flex-flow: $ff;
+}
+
+@mixin fWrap($fw) {
+-webkit-flex-wrap: $fw;
+-moz-flex-wrap: $fw;
+-ms-flex-wrap: $fw;
+-o-flex-wrap: $fw;
+flex-wrap: $fw;
+}

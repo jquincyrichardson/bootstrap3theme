@@ -1,0 +1,119 @@
+/*!
+Theme Name: BootstrapWP-3d
+Theme URI: http://underscores.me/
+Author: Brian Butler | 3D Digital Solutions
+Author URI: http://3ddigitalsolutions.com
+Description: Base WordPress | Bootstrap theme for 3D Digital Solutions Development
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: bootrapwp-3d
+Tags:
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+BootstrapWP-3d is based on Underscores http://underscores.me/, (C) 2012-2016 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
+*/
+
+/*
+-------- FONT AWESOME ICONS > http://fortawesome.github.io/Font-Awesome/icons/ --------
+*/
+
+/*
+-------- GRID SYSTEM BREAKS --------
+-xs-  Extra small devices | phones (<768px) | None (auto)
+-sm-  Small devices | tablets (>=768px) | 750px
+-md-  Medium devices | desktops (>=992px) | 970px
+-lg-  Large devices | desktops (>=1200px) | 1170px
+*/
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Accessibility
+# Alignments
+# Widgets
+# Content
+    ## Posts and pages
+	## Asides
+	## Comments
+# Infinite scroll
+# Media
+	## Captions
+	## Galleries
+--------------------------------------------------------------*/
+@import "variables-site/variables-site";
+@import "mixins/mixins-master";
+
+
+/*--------------------------------------------------------------
+# Accessibility
+--------------------------------------------------------------*/
+@import "modules/accessibility";
+
+/*--------------------------------------------------------------
+# Alignments
+--------------------------------------------------------------*/
+@import "modules/alignments";
+
+/*--------------------------------------------------------------
+# Widgets
+--------------------------------------------------------------*/
+@import "site/secondary/widgets";
+
+/*--------------------------------------------------------------
+# Content
+--------------------------------------------------------------*/
+@import "site/site";
+
+/*--------------------------------------------------------------
+# Infinite scroll
+--------------------------------------------------------------*/
+@import "modules/infinite-scroll";
+
+/*--------------------------------------------------------------
+# Media
+--------------------------------------------------------------*/
+@import "media/media";
+
+
+/*=============================================================
+  =============================================================*/
+
+/* WORD BREAK */
+#primary, #secondary {
+	-ms-word-break: break-all;
+	
+	/*Be VERY careful with this, breaks normal words wh_erever*/
+	word-break: break-all;
+	
+	/*Non standard for webkit*/
+	word-break: break-word;
+	
+	-webkit-hyphens: auto;
+	-moz-hyphens: auto;
+	hyphens: auto;	
+}
+
+/*======== HEADER ========*/
+
+/*======== NAVIGATION ========*/
+
+/*======== CONTENT ========*/
+
+#content {
+	width:100%;
+	padding:25px;	
+}
+
+/*======== FOOTER ========*/
+
+#footer {
+	border-top:1px #ccc solid;	
+}
+

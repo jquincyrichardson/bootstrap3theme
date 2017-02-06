@@ -14,7 +14,7 @@
 
 get_header(); ?>
 
-<div class="container-fluid"><!-- add "container" class to set max-width -->
+<div class="container-fluid"><!-- add "container" class to set max-width mstr edit -->
 	<div class="row">
 
     

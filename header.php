@@ -48,7 +48,7 @@
 		} );
 	
 	</script>
-	<?PHP if (is_page(13)) { ?>
+	<?PHP if (is_page(13)) {  ?>
 	<script>
 	//smooth scrolling
 	jQuery(function($) {
@@ -71,12 +71,9 @@
 
 <body <?php body_class(); ?>>
 <div id="page" class="site">
-<a class="skip-link screen-reader-text" href="#main">
-<?php esc_html_e( 'Skip to content', 'bootrapwp-3d' ); ?>
-</a>
-<header id="masthead" class="site-header clearfix">
-  <div id="header" class="clearfix">
-    <div class="logo col-md-2"><a class="logoa" href="<?php echo home_url(); ?>"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/logoJustShipIt.jpg" alt="<?php bloginfo( 'name' ); ?>"/></a> </div>
+<a class="skip-link screen-reader-text" href="#main"><?php esc_html_e( 'Skip to content', 'bootrapwp-3d' ); ?></a>
+<header id="header" class="site-header clearfix">
+    <div class="logo col-md-2"><a class="logoa" href="<?php echo home_url(); ?>"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/logo.jpg" alt="<?php bloginfo( 'name' ); ?>"/></a> </div>
     <div class="mainNav col-md-8">
       <div class="navbar navbar-default col-md-12" role="navigation">
       <!--  <div class="container-fluid">-->
@@ -101,16 +98,9 @@
     </div>
     <div id="headerPhone" class="col-md-2">
     	
-    	<a href="tel:+19043129927" class="contactPhone"><i class="fa fa-fw" aria-hidden="true" title="Call Just Ship It"></i>904-312-9927</a>
+    	<a href="tel:+19043129927" class="contactPhone"><i class="fa fa-fw" aria-hidden="true" title="Call Today"></i>904-312-9927</a>
     	
     </div>
-  </div>
-  <?PHP if (is_front_page()) :?>
-  <div id="sliderContainer"> <?PHP echo do_shortcode(' [smartslider3 slider=1]'); ?> 
-  
-  
-  </div>
-  <?PHP endif;?>
 </header>
 <!-- #masthead -->
 

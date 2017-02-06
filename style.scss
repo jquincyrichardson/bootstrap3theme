@@ -56,9 +56,6 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 --------------------------------------------------------------*/
 
 @import 'mixins';
-@mixin smallRedLine {
-	display: block; content:""; width: 50px; border-bottom: 3px solid $c2; margin-top: 8px;
-}
 
 /*********Colors************/
 
@@ -76,11 +73,12 @@ $f1: "alternate-gothic-no-2-d", Open Sans, Arial, Helvetica, sans-serif;
 $f2: 	"soleto", Arial, Helvetica, sans-serif;
 $f3: "FontAwesome";
 
+$headFont: $f1;
+$bodyFont: $f2;
+
 //did you include fonts? typekit or google fonts  
 
 //--------------------------basics 
-
-
 
 body { background: #fff; 
  color: $myGray;
@@ -88,7 +86,7 @@ body { background: #fff;
  font-size: 16px;
 }
 h1, h2, h3, h4, h5 {
- font-family: $f2;
+ font-family: $f1;
 }
 h1, h2, h3, h4, h5, h6, h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
 	line-height: 1.5em;
@@ -110,8 +108,6 @@ h2 {
 	/* = 36px */
 	line-height: 1.25;
 }
-	
-
 h3 {
  	color: $c3;
 	font-size: 2rem;
@@ -130,14 +126,14 @@ h6 {
 	color: #666666;
 	font-size: 1.000rem;/* = 16px */
 }
- a {
+a {
  	color: $c2;
 	font-weight: 400;
-	text-decoration: none;
-}
-a:hover {
- color: $c3;
+	text-decoration: none !important;
+&:hover, &:active {
+ 	color: $c3;
 	outline: 0;
+	 }
 }
 img {max-width: 100%; height: auto;}
 
@@ -146,42 +142,20 @@ img {max-width: 100%; height: auto;}
 
 
 /*======== HEADER ========*/
-#header {}
+#header {background: #fff;}
 .logo {margin-top: 10px; margin-bottom: 10px; text-align: center;}
-#headerPhone {
-	text-align: center;
+#headerPhone {text-align: center;
 	i {color: $c2;}
 	a {
 		display: inline-block;
-	padding: 45px 0;
-	color: $c5;
-	font-family: $f2;
-	font-weight: 500;
-	font-size: 22px;}
-
-@media (max-width:1245px) {
-	    position: absolute;
-    right: 0;
-    width: 214px;
-	//a{font-size: 1.5em;}
-}
-
-@media (max-width:1023px) {
-    right: 9px;
-    width: 214px;
-    top: 0px;
-    padding: 0;
-}
-@media (max-width:768px) {
-	position: relative; width: 100%; right: auto; top: auto;
-	a {padding: 20px 0;}
+		padding: 45px 0;
+		color: $c5;
+		font-family: $f2;
+		font-weight: 500;
+		font-size: 22px;
 	}
-
 }
 
-#masthead {background: #fff;
-
-}
 
 #sliderContainer { color: #fff;
 	.sliderHeader {color: #fff; font-family: $f1; font-weight: 500; font-size: 60px; text-transform: uppercase; line-height: 1; text-shadow: 0px 0px 11px rgba(0, 0, 0, 1);}
@@ -203,30 +177,13 @@ img {max-width: 100%; height: auto;}
 #bs-example-navbar-collapse-1 {
 	li {text-align: center;}
 }
-.navbar {
-	border-radius: 0px; margin-bottom: 0;
-}
-.navbar-default {
-	border: none; padding-right: 0; background: none;
-}
+.navbar {border-radius: 0px; margin-bottom: 0;}
+.navbar-default {	border: none; padding-right: 0; background: none;}
 	.mainNav {
 		
-@media screen and (max-width:1023px) {
-		width: 100%;
-	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,f1f1f1+50,e1e1e1+51,f6f6f6+100;White+Gloss+%231 */
-background: rgb(255,255,255); /* Old browsers */
-background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(241,241,241,1) 50%, rgba(225,225,225,1) 51%, rgba(246,246,246,1) 100%); /* FF3.6-15 */
-background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(241,241,241,1) 50%,rgba(225,225,225,1) 51%,rgba(246,246,246,1) 100%); /* Chrome10-25,Safari5.1-6 */
-background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(241,241,241,1) 50%,rgba(225,225,225,1) 51%,rgba(246,246,246,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-border-top: 2px solid $c2;
-	margin-top: 15px;
-	
-	} 
-
-		@media screen and (max-width:768px) {background: #efefef;}
-
-
+@media screen and (max-width:1023px) {width: 100%; margin-top: 15px;} 
 }
+
 #menu-main-header { margin: 0 auto; float: none; text-align: center;
 	li {float: none; display: inline-block;
 		&:hover { }
@@ -240,7 +197,10 @@ border-top: 2px solid $c2;
 	@media screen and (max-width:1023px) {li a{border-top: none!important; padding: 30px 15px;}}
  
 }
-@media screen and (max-width:768px) { @include navBreakMobile;}
+@media screen and (max-width:768px) { @include navBreakMobile;} //enables mobile
+
+
+/*======== END NAVIGATION ========*/
 
 /*======== CONTENT ========*/
 
@@ -269,7 +229,6 @@ h1.entry-title {
 
 #footer {
 	padding-top: 40px;
-	
 	background: $c1;
 	color: #fff !important;
 	a {color: #fff;}
@@ -304,10 +263,7 @@ h1.entry-title {
 		 border:none !important;
 		margin-top: 5px;
 	}
-	 input {
-		
-		
-	}
+	 
 	
 	textarea {
 		height: 40px;
@@ -329,163 +285,43 @@ h1.entry-title {
 	text-align: center; margin-top: 30px;
 }
 	#footerContact {
-		
 		input, textarea {width: 95%; padding: 10px;}
 		div.wpcf7 .ajax-loader {display: block; margin: 0 auto;}
 	}
 }
 
 
+/*======== Form ========*/
 
-/*********custom***************/
-
-.shippingServices {background: -webkit-linear-gradient($c3 0%, $c1 100%);background: -o-linear-gradient($c3 0%, $c1 100%);background: linear-gradient($c3 0%, $c1 100%); min-height: 50vh;
-	@include dFlex(991px);
-	@include aItems(center);
-	@include jContent(center);
-	.shippingSub {color: #fff!important; padding: 0 30px;
-		p:after {@include smallRedLine;	}
-	@media screen and (max-width:991px) {text-align: center;
-		h2 {text-align: center;}
-		br {display: none;}
-		p:after {margin: 8px auto 0;	}}
+input, textarea {padding: 3px 10px;
+		font-size: .8em;
+		background: $c5;
+		border:none !important;
+		margin-top: 5px;
 	}
-	h2 {color: #fff!important; font-family: $f2; font-weight: bold; text-transform: uppercase; font-size: 36px;}
-}
-
-.shippingCarriers {
-	background: url(images/bgPattern.jpg);
-	-webkit-background-attachment: fixed;
-	-moz-background-attachment: fixed;
-	-ms-background-attachment: fixed;
-	-o-background-attachment: fixed;
-	background-attachment: fixed;
-	-ms-align-self: stretch;
-	align-self:  stretch;
-	@include dFlex(991px);	
-	@include aItems(center);
-	padding: 50px 0;
-
-	h3{color: $c5; font-family: $f2; font-weight: 500; text-transform: uppercase;}
-		h3:after {@include smallRedLine;	}
-	@media screen and (max-width:1280px) {h3 {font-size: 16px;}}
-}
-
-
-.shippingCarriersSub {background: rgba(#fff,.9); width: 90%; position: relative; left: -10%;
-
-	.carriers {
-		margin-bottom: 30px;
-		@include dFlex(991px);	
-		@include aItems(flex-end); 
-		min-height: 150px;
-		div {@media screen and (max-width:767px) {text-align: center; .icon {margin: 0 auto;} 
+	textarea {
+		height: 40px;
 		
-		h3:after {margin: 8px auto 0;	}}
-		}
 	}
-
-@media screen and (max-width:1280px) {width: 100%; left: -5%;
-	.carriers {margin-bottom: 0px;}
-	
-	}
-	
-	
-	@media screen and (max-width:991px) {width: 90%; left: auto; margin: 0 auto; }
-	
-}
-
-
-
-
-
-
-.ctaShell {
-    background: url(images/bgCTAShell.jpg) no-repeat;
-	-webkit-background-size: cover;
-	background-size: cover;
-	.ctas {margin-bottom: 30px;}
-	li {list-style-type: none; text-align: center;}
-	a {text-decoration: none !important;}
-	i {margin: 0 auto; position: relative; z-index: 3;}
-	h2 {color: $c2; font-family: $f2; text-transform: uppercase; font-weight: bold; margin-bottom: 5px; line-height: 1.125;}
-	.ctaSpan {   
-		display: block; color: #000; min-height: 249px; @include transition;
-		margin: -74px auto 20px; font-family: $f2;
+	input[type=submit] {
+		margin-top: 5px;
+		padding: 10px 30px;
 		text-align: center;
-		background: #EEEDED;
-		padding: 80px 20px 20px;
-		-webkit-box-shadow: 1px 1px 5px 1px rgba(214,214,214,1);
-		-moz-box-shadow: 1px 1px 5px 1px rgba(214,214,214,1);
-		box-shadow: 1px 1px 5px 1px rgba(214,214,214,1);
-			p a {font-family: $f2; font-weight: 500;}
-			a {color: #000;}
+		text-transform: uppercase;
+		background: $c2;
 	}
-	a:hover .ctaSpan {background: #fff;}
-	@media screen and (max-width:1210px) { 
-		
-		.ctaSpan {min-height: 240px; padding-top: 60px;}
-		.ctas {margin-bottom: 0;}
-		h2 {font-size: 24px;}
-	
-	
-	}
-}
-
-
-.redRow {background: $c2; text-align: center; 
-	h2 {color: #fff; font-size: 60px; text-transform: uppercase; font-family: $f1;}
-	@media screen and (max-width:1030px) {padding: 20px 10px; h2 {font-size: 30px;}}
-}
 
 
 
 
 
-.servicesNav {text-align: center; padding: 20px 10px; 
-	a {padding: 10px; color: #fff; font-weight: bold; font-size: 14px; background: $c2; display: inline-block;
-		border-radius:5px; @include transition; text-decoration: none !important; margin: 5px auto;
-	&:hover {background: $c1; color: #fff; }
-	}
-}
-.services {.container { padding: 40px; }
-	h2:after {@include smallRedLine;}
-	h3 {color: $c2;}
-}
-.page-id-2 .services { min-height: 50vh;} // about us page
-.services:nth-child(even), .page-id-14 .services, .page-id-2 .services, .page-id-81 .services {background: url(images/bgPattern.jpg); background-attachment: fixed; padding: 40px 20px;
-	.container {background: #fff; -webkit-box-shadow: 2px 2px 11px 0px rgba(50, 50, 50, 0.91);
--moz-box-shadow:    2px 2px 11px 0px rgba(50, 50, 50, 0.91);
-box-shadow:         2px 2px 11px 0px rgba(50, 50, 50, 0.91); 
-}
-}
-.callOut {text-align: center; color: #fff; font-weight: bold; padding: 20px; font-size: 18px; background: $c2; display: block;
-		border-radius:5px; max-width: 80%; @include transition; text-decoration: none !important; margin: 30px auto;
 
-	span {text-transform: uppercase; display: block; font-size: 20px; font-weight: 700;}
-	a {color: #fff;}
-	&:hover {background: $c1; color: #fff; }
-}
+/*======== End Form ========*/
 
 
-//faq
-.collapse {
-     display: none; 
-}
 
-.panel {border: none !important}
-.panel-default > .panel-heading {display: block; width: 100%; background: $c1; color: #fff; border-color: $c1;  padding: 0px; text-align: left; font-size: 18px; @include transition;
-	&:hover { background: $c2; color: #fff; }
-}
-.FAQ {padding: 20px; min-height: 200px; margin-bottom: 20px; }
-.panel-title {
-	i {float: right; }
-	a[aria-expanded="true"] i {transform: rotate(90deg);}
-	a {display: block; width: 100%; text-decoration: none !important; color: #fff !important; padding: 20px;}
-a:hover {color: #fff; text-decoration: none;}
-&:hover {color: #fff;}
-}
-.panel-default > .panel-heading + .panel-collapse > .panel-body {border-top: none;}
+/*********icon info***************/
+
 
 
 .icon {
@@ -699,6 +535,10 @@ a:hover {color: #fff; text-decoration: none;}
     height: 83px;
     background-position: -158px -2px;
 }
+
+/********end Icon info************/
+
+
 
 @import 'main';
 

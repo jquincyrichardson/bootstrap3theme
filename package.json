@@ -1,0 +1,24 @@
+{
+  "name": "bootstrap3theme",
+  "version": "1.0.0",
+  "description": "Bootstrap Test Theme",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jquincyrichardson/bootstrap3theme.git"
+  },
+  "keywords": [
+    "Bootstrap",
+    "theme",
+    "wordpress"
+  ],
+  "author": "Quincy Richardson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jquincyrichardson/bootstrap3theme/issues"
+  },
+  "homepage": "https://github.com/jquincyrichardson/bootstrap3theme#readme"
+}
